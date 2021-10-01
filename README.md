@@ -1,6 +1,7 @@
 # Twitter - Part I
 
-This is a basic twitter app to read your tweets.
+This is a basic twitter app to read your tweets using the [The Twitter API](https://developer.twitter.com/en/docs/twitter-api).
+
 
 Time spent: **4** hours spent in total
 
