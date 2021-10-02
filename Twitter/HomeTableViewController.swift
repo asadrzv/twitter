@@ -33,7 +33,7 @@ class HomeTableViewController: UITableViewController {
     
     // Load all tweets onto user's home page
     @objc func loadTweets() {
-        numberOfTweets = 20
+        numberOfTweets = 10
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let myParams = ["counts": numberOfTweets]
         
@@ -61,7 +61,7 @@ class HomeTableViewController: UITableViewController {
     
     // Infinitly loads more tweets when scrolling down
     func loadMoreTweets() {
-        numberOfTweets += 20
+        numberOfTweets += 10
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let myParams = ["counts": numberOfTweets]
 
