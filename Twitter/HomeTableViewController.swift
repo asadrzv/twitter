@@ -22,7 +22,11 @@ class HomeTableViewController: UITableViewController {
         
         // Pull to refresh the screen and load more tweets
         myRefreshControl.addTarget(self, action: #selector(loadTweets), for: .valueChanged)
-        tableView.refreshControl = myRefreshControl
+        self.tableView.refreshControl = myRefreshControl
+         
+        // Automatically calculate height of text and set initial value to 150
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 150
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -84,12 +88,6 @@ class HomeTableViewController: UITableViewController {
             // Reloads tweet data when new date retrieved
             self.tableView.reloadData()
             
-            
-            
-            print("Number of tweets: \(self.numberOfTweets)")
-            
-            
-            
         }, failure: { (Error) in
             print("Failed to retrieve tweets!")
             print(Error.localizedDescription)
@@ -121,6 +119,13 @@ class HomeTableViewController: UITableViewController {
         if let imageData = data {
             cell.profileImageView.image = UIImage(data: imageData)
         }
+        
+        // Set color of favorite icon (red or grey)
+        cell.setFavorite(tweetArray[indexPath.row]["favorited"] as! Bool)
+        
+        // Set tweet id of favorited/retweeted tweet
+        cell.tweetId = tweetArray[indexPath.row]["id"] as! Int
+        cell.setRetweeted(tweetArray[indexPath.row]["retweeted"] as! Bool)
         
         return cell
     }

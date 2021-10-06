@@ -2,15 +2,15 @@
 
 This is a basic twitter app to view, compose, favorite, and retweet tweets using the [The Twitter API](https://developer.twitter.com/en/docs/twitter-api).
 
-Time spent: **X** hours spent in total
+Time spent: **3** hours spent in total
 
 ## User Stories
 
 The following **required** functionality is completed:
 
 - [x] User can compose a tweet. (4pts)
-- [ ] User can favorite a tweet. (4pts)
-- [ ] User can retweet a tweet. (2pts)
+- [x] User can favorite a tweet. (4pts)
+- [x] User can retweet a tweet. (2pts)
 
 The following **bonus** features are implemented:
 
@@ -22,7 +22,7 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='part2_demo.gif' title='Part 2 Video Walkthrough' width='' alt='Part 2 Video Walkthrough' /><br>
 
 ---
 
@@ -52,7 +52,7 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /><br>
+<img src='part1_demo.gif' title='Part 1 Video Walkthrough' width='' alt='Part 1 Video Walkthrough' /><br>
 
 ## License
 
