@@ -11,7 +11,7 @@ import UIKit
 class HomeTableViewController: UITableViewController {
     
     var tweetArray = [NSDictionary]()
-    var numberOfTweets: Int!
+    var numberOfTweets = 10
     let myRefreshControl = UIRefreshControl()
 
     override func viewDidLoad() {
@@ -31,9 +31,15 @@ class HomeTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Loads all tweets to home page
+        self.loadTweets()
+    }
+    
     // Load all tweets onto user's home page
     @objc func loadTweets() {
-        numberOfTweets = 10
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let myParams = ["counts": numberOfTweets]
         
@@ -61,7 +67,7 @@ class HomeTableViewController: UITableViewController {
     
     // Infinitly loads more tweets when scrolling down
     func loadMoreTweets() {
-        numberOfTweets += 10
+        numberOfTweets = numberOfTweets + 10
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let myParams = ["counts": numberOfTweets]
 
@@ -77,6 +83,12 @@ class HomeTableViewController: UITableViewController {
             
             // Reloads tweet data when new date retrieved
             self.tableView.reloadData()
+            
+            
+            
+            print("Number of tweets: \(self.numberOfTweets)")
+            
+            
             
         }, failure: { (Error) in
             print("Failed to retrieve tweets!")
